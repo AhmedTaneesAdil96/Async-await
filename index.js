@@ -1,6 +1,6 @@
 const postContainer = document.getElementById('posts-container')
 const loading = document.getElementById('loader')
-const filter = document.getElementById('filter');
+
 
 let limit = 6;
 let page = 1;
@@ -56,23 +56,4 @@ function showLoading() {
             showPosts();
         }, 1000);
     }, 1000);
-}
-
-
-filter.addEventListener('input', filterFunc);
-
-function filterFunc(e) {
-    const userInput = e.target.value.toUpperCase();
-    const postData = document.querySelectorAll('.post')
-
-
-
-    postData.forEach(postt => {
-        const postId = postt.querySelector('.post-title').innerHTML;
-        if (title.indexOf(userInput) > -1) {
-            postt.style.display = "flex"
-        } else {
-            postt.style.display = ''
-        }
-    })
 }
